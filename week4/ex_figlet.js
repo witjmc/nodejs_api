@@ -11,3 +11,4 @@ figlet('Hello World!!', function (err, data) {
     }
     console.log(data);
 });
+// 안쓰는모듈 삭제 : npm unistall figlet
