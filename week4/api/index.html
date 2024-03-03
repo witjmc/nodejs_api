@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <title>api 서버 만들기</title>
+        <!--공식 문서 : https://developer.mozilla.org/ko/docs/Web/API/Fetch_API/Using_Fetch-->
+        <!--html 문서 실행.. 웹 콘솔에서 api 데이터 확인 가능-->
+    </head>
+    <body>
+        <h1 id="port"></h1>
+        <input id="name" type="text" />
+        <button onclick="getPort()">api 요청</button>
+        <script>
+            function getPort() {
+                // 입력값 가져오기
+                const name = document.getElementById('name').value;
+                fetch(`http://localhost:3000/port/${name}`)
+                    .then((response) => response.json())
+                    .then((data) => {
+                        console.log(data);
+                        // h1 태그에 데이터 넣어주기
+                        document.getElementById('port').innerHTML = data;
+                    });
+            }
+        </script>
+    </body>
+</html>
