@@ -1,11 +1,11 @@
 <template>
     <div>
         <h2>Multi Checkbox</h2>
-        <MultiCheckbox :items="items" v-model="checkedNames1" />
+        <MultiCheckbox :items="items" v-model="checkedNames1" @update:selected="checkedNames1 = $event" />
         <h2>Multi Checkbox2</h2>
-        <MultiCheckbox :items="items2" v-model="checkedNames2" />
+        <MultiCheckbox :items="items2" v-model="checkedNames2" @update:selected="checkedNames2 = $event" />
         <h2>Multi Checkbox3</h2>
-        <MultiCheckbox :items="items3" v-model="checkedNames3" />
+        <MultiCheckbox :items="items3" v-model="checkedNames3" @update:selected="checkedNames3 = $event" />
     </div>
 </template>
 
