@@ -17,4 +17,15 @@ const currentTabComponent = () => {
     console.log('currentTab.value:', currentTab.value);
     return currentTab.value === 'Setting1' ? Setting1 : Setting2;
 };
+
+//  const currentTabComponent = () => {
+//   console.log("currentTab.value:", currentTab.value);
+
+//   if (currentTab.value === "Setting1") {
+//     return Setting1;
+//   } else if (currentTab.value === "Setting2") {
+//     return Setting2;
+//   }
+// };
+    
 </script>
