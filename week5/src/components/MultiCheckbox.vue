@@ -3,7 +3,7 @@
     <template v-for="(item, index) in items" :key="index">
       <div class="checkbox-container">
         <input type="checkbox" :id="item.id" :value="item.value" v-model="checkedNames" />
-        <label class="checkbox-label" :for="item.id">{{ item.label }}</label>
+        <div class="checkbox-label" :for="item.id">{{ item.label }}</div>
       </div>
     </template>
   </div>
