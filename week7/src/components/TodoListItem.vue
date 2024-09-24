@@ -18,7 +18,7 @@ const props = defineProps({
   todoItem: { type: Object, required: true }
 })
 
-const { emit } = defineEmits(['delete-todo', 'toggle-completed'])
+const emit = defineEmits(['delete-todo', 'toggle-completed'])
 
 const handleDeleteTodo = () => {
   console.log('Delete todo clicked')
