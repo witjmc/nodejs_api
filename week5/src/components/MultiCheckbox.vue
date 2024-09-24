@@ -2,7 +2,7 @@
     <div>
         <template v-for="(item, index) in items" :key="index">
             <input type="checkbox" :id="item.id" :value="item.value" v-model="checkedNames" />
-            <label :for="item.id">{{ item.label }}</label>
+            <label class="checkbox-label" :for="item.id">{{ item.label }}</label>
         </template>
     </div>
 </template>
@@ -37,3 +37,7 @@ const updateCheckedNames = (newValue: string[]) => {
     emit('update:value', newValue);
 };
 </script>
+<style scoped>
+.checkbox-label {
+  margin-right: 10px; /* 오른쪽 여백 추가 */
+}
