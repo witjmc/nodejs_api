@@ -23,7 +23,7 @@ const props = defineProps({
   todoList: { type: Array, required: true }
 })
 
-const { emit } = defineEmits(['delete-todo', 'toggle-completed'])
+const emit = defineEmits(['delete-todo', 'toggle-completed'])
 
 const deleteTodoHandler = (id) => {
   emit('delete-todo', id)
