@@ -8,6 +8,7 @@
           :todoItem="todoItem"
           @delete-todo="deleteTodoHandler"
           @toggle-completed="toggleCompletedHandler"
+          @edit-todo="editTodoHandler"
         />
       </ul>
     </div>
@@ -26,10 +27,16 @@ const props = defineProps({
 const emit = defineEmits(['delete-todo', 'toggle-completed'])
 
 const deleteTodoHandler = (id) => {
+  console.log('Received delete-todo for id:', id)
   emit('delete-todo', id)
 }
 
 const toggleCompletedHandler = (id) => {
-  emit('toggle-completed', id)
+  //emit('toggle-completed', id)
+  const todo = props.todoList.find((todo) => todo.id === id) // props.todoList로 수정
+  if (todo) {
+    todo.todo = id.todo // todo 수정
+  }
 }
 </script>
+
