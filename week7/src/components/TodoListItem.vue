@@ -14,9 +14,9 @@
       class="form-control"
     />
     <span class="float-end badge bg-secondary pointer" @click.stop="handleDeleteTodo">삭제</span>
-    <button v-if="!isEditing" @click.stop="editTodo" class="btn float-end badge bg-secondary">
+    <span v-if="!isEditing" class="float-end badge bg-secondary pointer" @click.stop="editTodo">
       수정
-    </button>
+    </span>
   </li>
 </template>
 
