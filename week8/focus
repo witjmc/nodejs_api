@@ -1,0 +1,66 @@
+<template>
+  <div>
+    <h1>User Profile</h1>
+    <label for="userName">Name:</label>
+    <input id="userName" ref="nameInput" v-model="Object(user).name" />
+
+    <label for="userAge">Age:</label>
+    <input id="userAge" type="number" v-model="Object(user).age"/>
+  </div>
+  <div>
+    <h1>Exercise Profile</h1>
+    <label for="exerName1">Name 1:</label>
+    <input id="exerName1" type="checkbox" v-if="hasExer" v-model="Object(exer).name.active" />
+   
+   
+
+    <label for="exerName2_0">Name 2[0]:</label>
+    <div v-if="hasExer">
+      <input id="exerName2_0" type="checkbox" :value="1"  v-model="Object(exer).name.severy"/>
+      <input id="exerName2_0" type="checkbox" :value="2"  v-model="Object(exer).name.severy"/>
+      <input id="exerName2_0" type="checkbox" :value="3"  v-model="Object(exer).name.severy"/>
+    </div>
+    
+    
+  </div>
+  <button @click="handleSave">저장</button>
+  
+</template>
+
+<script setup lang="ts">
+import { ref, watchEffect, onMounted } from 'vue';
+import { useUserStore } from './stores/useUserStore';
+import { storeToRefs } from 'pinia';
+import { computed } from 'vue';
+
+
+const userStore = useUserStore();
+const { user ,exer } = storeToRefs(userStore);
+const { setUserExr ,fetchAndData } = userStore;
+const hasExer = computed(()=> Object(user.value).name && Object.keys(user.value).length !== 0);
+
+
+fetchAndData();
+
+const handleSave = () => {
+  console.log('user:', user);
+  console.log('exer', exer);
+  setUserExr(user.value , exer.value);
+}
+
+// Actions to increment the ages
+
+// Name input에 대한 ref
+const nameInput = ref<HTMLInputElement | null>(null);
+
+onMounted(() => {
+  // 컴포넌트가 마운트되면 input에 포커스
+  if (nameInput.value) {
+    nameInput.value.focus();
+  }
+});
+</script>
+
+<style scoped>
+/* 스타일이 여기에 들어갑니다. */
+</style>
