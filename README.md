@@ -1,12 +1,12 @@
 # week4 : 프로토콜별 포트 번호 조회 서비스(Express + fetch) (작성일: 2024.03.04)
 ## 프로토콜 이름을 입력하면 해당 포트 번호 알려주는 포트 조회 API 서버
 ### 1단계: 서버 시작(백엔드)
-npm i express cors
-node index.js
- node index.js 를 실행하면 Express 앱이 만듦
- app.use(cors()) 로 다른 출처(HTML파일)에서 오는 요청을 허용하도록 설정
- 라우트(/, /port/:name) 를 등록
- app.listen(3000) 으로 3000 번 포트에서 요청을 계속 기다린다. 이 시점부터 서버는 대기 상태
+#### npm i express cors
+#### node index.js
+##### node index.js 를 실행하면 Express 앱이 만듦
+##### app.use(cors()) 로 다른 출처(HTML파일)에서 오는 요청을 허용하도록 설정
+##### 라우트(/, /port/:name) 를 등록
+##### app.listen(3000) 으로 3000 번 포트에서 요청을 계속 기다린다. 이 시점부터 서버는 대기 상태
 ### 2단계: 사용자가 값을 입력하고 버튼 클릭(프론트엔드)
  사용자가 입력창에 http 를 입력
  api 요청 버튼을 누르면 onclick="getPort()" 에 의해서 getPort() 함수가 실행
