@@ -3,7 +3,7 @@
 ### 1단계: 서버 시작(백엔드)
 #### npm i express cors
 #### node index.js
-node index.js 를 실행하면 Express 앱이 만듦 -> 
+node index.js 를 실행하면 Express 서버 만듦 -> 
 app.use(cors()) 로 다른 출처(HTML파일)에서 오는 요청을 허용하도록 설정 -> 
 라우트(/, /port/:name) 를 등록 ->
 app.listen(3000) 으로 3000 번 포트에서 요청을 계속 기다림 -> 
