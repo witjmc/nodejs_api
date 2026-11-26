@@ -52,4 +52,5 @@ app.listen(3000) 으로 3000 번 포트에서 요청을 계속 기다림 ->
 ### 6.H2 Database 설정
 ### 7.MyBatis 설정 및 활용
 ### 8.JPA 설정 및 활용
+####( 강의 참고: 1시간만에 끝내는spring boot rest api 서비스 개발(chunGeun-yu) )
 
