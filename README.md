@@ -10,15 +10,15 @@ app.listen(3000) 으로 3000 번 포트에서 요청을 계속 기다림 ->
 이 시점부터 서버는 대기 상태
 ### 2단계: 사용자가 값을 입력하고 버튼 클릭(프론트엔드)
  사용자가 입력창에 http 를 입력 ->
- api 요청 버튼을 누르면 onclick="getPort()" 에 의해서 getPort() 함수가 실행-> 
+ api 요청 버튼을 누르면 onclick="getPort()" 에 의해서 getPort() 함수가 실행 -> 
  함수 안에서 document.getElementById('name').value 로 입력창의 값(http) 을 가져옴
 ### 3단계: 서버로 요청 전송
- 입력값을 주소에 끼워 넣어 http://localhost:3000/port/http 로 GET 요청을 보냄->
+ 입력값을 주소에 끼워 넣어 http://localhost:3000/port/http 로 GET 요청을 보냄 ->
  fetch 는 비동기라서 응답을 기다리는 동안 다른 작업을 막지 않고, 응답이 오면, .then() 에 적어둔 함수가 실행
 ### 4단계 : 서버가 요청을 처리
 fetch(`http://localhost:3000/port/${name}`)
  서버는 들어온 주소가 /port/:name 형태와 맞는지 확인->
- 일치하므로 해당 콜백 함수가 실행되고, 주소의 :name 자리에 있던 값이 req.params 에 담김->
+ 일치하므로 해당 콜백 함수가 실행되고, 주소의 :name 자리에 있던 값이 req.params 에 담김 ->
  여기서 name:'http' 이다. ->
  console.log(name) 으로 서버 터미널에 받은 값을 출력 ->
  if/else if 순서대로 비교, ftp 인가? 아닌가? ssh인가? 아닌가? 조건에 맞으면 res.json({port:'80(tcp)'}) 를 실행하고 나머지 조건은 검사하지 않음 ->
