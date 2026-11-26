@@ -16,7 +16,7 @@ app.listen(3000) 으로 3000 번 포트에서 요청을 계속 기다림 ->
  입력값을 주소에 끼워 넣어 http://localhost:3000/port/http 로 GET 요청을 보냄 ->
  fetch 는 비동기라서 응답을 기다리는 동안 다른 작업을 막지 않고, 응답이 오면, .then() 에 적어둔 함수가 실행
 ### 4단계 : 서버가 요청을 처리
-fetch(`http://localhost:3000/port/${name}`)
+#### fetch(`http://localhost:3000/port/${name}`)
  서버는 들어온 주소가 /port/:name 형태와 맞는지 확인->
  일치하므로 해당 콜백 함수가 실행되고, 주소의 :name 자리에 있던 값이 req.params 에 담김 ->
  여기서 name:'http' 이다. ->
