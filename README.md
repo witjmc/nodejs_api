@@ -24,8 +24,8 @@ app.listen(3000) 으로 3000 번 포트에서 요청을 계속 기다림 ->
  if/else if 순서대로 비교, ftp 인가? 아닌가? ssh인가? 아닌가? 조건에 맞으면 res.json({port:'80(tcp)'}) 를 실행하고 나머지 조건은 검사하지 않음 ->
  어떤 조건에 맞지 않으면 마지막 else 에서 { port :' 알수 없음'} 을 응답함
 ### 5단계 : 응답을 받아 화면에 표시
-## .then((response) => response.json()) 
-## .then((data) => { ... }) 
+#### .then((response) => response.json()) 
+#### .then((data) => { ... }) 
  첫 번째 .then : 서버가 보낸 응답 (json 문자열) 을 자바스크립트 객체로 변환 ->
  두 번째 .then : 변환된 객체 {port:'80(tcp)' } 가 data 로 들어옴->
  console.log(data) 로 F12 콘솔에 출력 
